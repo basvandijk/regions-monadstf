@@ -1,5 +1,5 @@
 name:          regions-monadstf
-version:       0.1
+version:       0.1.0.1
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -17,9 +17,9 @@ source-repository head
 
 Library
   GHC-Options: -O2 -Wall -fno-warn-orphans
-  build-depends: unicode-symbols == 0.1.*
-               , transformers    >= 0.1.4 && < 0.2
-               , regions         == 0.1.*
-               , monads-tf       == 0.0.*
+  build-depends: base-unicode-symbols == 0.1.*
+               , transformers         >= 0.1.4 && < 0.2
+               , regions              == 0.1.*
+               , monads-tf            == 0.0.*
   exposed-modules: Control.Monad.Trans.Region.Instances.MonadsTF
 
