@@ -27,7 +27,7 @@ import Control.Monad.Writer.Class ( MonadWriter, WriterType, tell, listen, pass 
 import Control.Monad.Trans ( lift )
 
 -- from unicode-symbols:
-import Prelude.Unicode ( (∘) )
+import Data.Function.Unicode ( (∘) )
 
 -- from regions:
 import Control.Monad.Trans.Region.Internal ( RegionT
