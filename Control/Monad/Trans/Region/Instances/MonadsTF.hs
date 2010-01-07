@@ -30,40 +30,40 @@ import Control.Monad.Trans ( lift )
 import Data.Function.Unicode ( (∘) )
 
 -- from regions:
-import Control.Monad.Trans.Region.Internal ( RegionT
-                                           , liftCatch
-                                           , mapRegionT
-                                           -- TODO: , liftCallCC
-                                           )
+import Control.Monad.Trans.Region ( RegionT
+                                  , liftCatch
+                                  , mapRegionT
+                                  -- TODO: , liftCallCC
+                                  )
 
 -- TODO:
--- instance Monad pr ⇒ MonadCont (RegionT resource s pr) where
+-- instance Monad pr ⇒ MonadCont (RegionT s pr) where
 --     callCC = liftCallCC callCC
 
-instance MonadError pr ⇒ MonadError (RegionT resource s pr) where
+instance MonadError pr ⇒ MonadError (RegionT s pr) where
 
-    type ErrorType (RegionT resource s pr) = ErrorType pr
+    type ErrorType (RegionT s pr) = ErrorType pr
 
     throwError = lift ∘ throwError
     catchError = liftCatch catchError
 
-instance MonadRWS pr ⇒ MonadRWS (RegionT resource s pr)
+instance MonadRWS pr ⇒ MonadRWS (RegionT s pr)
 
-instance MonadReader pr ⇒ MonadReader (RegionT resource s pr) where
-    type EnvType (RegionT resource s pr) = EnvType pr
+instance MonadReader pr ⇒ MonadReader (RegionT s pr) where
+    type EnvType (RegionT s pr) = EnvType pr
 
     ask   = lift ask
     local = mapRegionT ∘ local
 
-instance MonadWriter pr ⇒ MonadWriter (RegionT resource s pr) where
-    type WriterType (RegionT resource s pr) = WriterType pr
+instance MonadWriter pr ⇒ MonadWriter (RegionT s pr) where
+    type WriterType (RegionT s pr) = WriterType pr
 
     tell   = lift ∘ tell
     listen = mapRegionT listen
     pass   = mapRegionT pass
 
-instance MonadState pr ⇒ MonadState (RegionT resource s pr) where
-    type StateType (RegionT resource s pr) = StateType pr
+instance MonadState pr ⇒ MonadState (RegionT s pr) where
+    type StateType (RegionT s pr) = StateType pr
 
     get = lift get
     put = lift ∘ put
