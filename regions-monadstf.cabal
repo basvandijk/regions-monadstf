@@ -16,7 +16,7 @@ source-repository head
   Location: http://code.haskell.org/~basvandijk/code/regions-monadstf
 
 Library
-  GHC-Options: -O2 -Wall -fno-warn-orphans
+  GHC-Options: -Wall -fno-warn-orphans
   build-depends: base-unicode-symbols >= 0.1.1 && < 0.2
                , transformers         >= 0.1.4 && < 0.2
                , regions              == 0.2.*
