@@ -1,5 +1,5 @@
 name:          regions-monadstf
-version:       0.3.1.5
+version:       0.3.1.6
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -12,8 +12,8 @@ category:      Control, Monadic Regions
 synopsis:      Monads-tf instances for the RegionT monad transformer
 
 source-repository head
-  Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/regions-monadstf
+  Type:     git
+  Location: git://github.com/basvandijk/regions-monadstf.git
 
 Library
   GHC-Options: -Wall -fno-warn-orphans
