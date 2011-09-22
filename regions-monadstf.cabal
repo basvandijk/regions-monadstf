@@ -20,6 +20,6 @@ Library
   GHC-Options: -Wall -fno-warn-orphans
   build-depends: base-unicode-symbols >= 0.1.1 && < 0.3
                , transformers         >= 0.1.4 && < 0.3
-               , regions              >= 0.4   && < 0.10
+               , regions              >= 0.4   && < 0.11
                , monads-tf            >= 0.0   && < 0.2
   exposed-modules: Control.Monad.Trans.Region.Instances.MonadsTF
